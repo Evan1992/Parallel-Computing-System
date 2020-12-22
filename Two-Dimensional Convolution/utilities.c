@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int N;
 void read_from_file(char* file_name, complex (*im)[N]){
     FILE *f; /*open file descriptor */
     f = fopen(file_name, "r");
@@ -21,4 +20,8 @@ void write_to_file(char *file_name, complex (*im)[N]){
         for(j=0; j<512; j++)
             fprintf(f, "%16.7e", im[i][j].r);
         fprintf(f, "\n");
+}
+
+void transpose(complex (*im)[N]){
+
 }
