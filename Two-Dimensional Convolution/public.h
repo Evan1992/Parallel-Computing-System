@@ -10,7 +10,7 @@
 #ifndef PUBLIC_H
 #define PUBLIC_H
 
-#define MAXN 20000    /* Max Matrix size */
+#define N 512    /* Matrix size */
 typedef struct {float r; float i;} complex;
 
 
