@@ -1,3 +1,7 @@
+/*
+ * Serial program to solve 2D convolution problem
+ */
+
 #include "fft.h"
 #include "utilities.h"
 #include "public.h"
@@ -39,7 +43,7 @@ void main(int argc, char **argv){
         c_fft1d(im2[row], N, isign);
     }
 
-    /* transpose im1 and im2 */
+    /* Transpose im1 and im2 */
     transpose(im1);
     transpose(im2);
 
@@ -49,11 +53,11 @@ void main(int argc, char **argv){
         c_fft1d(im2[row], N, isign);
     }
 
-    /* tranpose im1 and im2 again */
+    /* Tranpose im1 and im2 again */
     transpose(im1);
     transpose(im2);
 
-    /* point-wise multiplication */
+    /* Point-wise multiplication */
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             im3[i][j] = multiplication(im1[i][j], im2[i][j]);
@@ -66,7 +70,7 @@ void main(int argc, char **argv){
         c_fft1d(im3[row], N, isign);
     }
 
-    /* transpose im3 */
+    /* Transpose im3 */
     transpose(im3);
 
     /* Another round of 1D-FFT */
@@ -77,6 +81,6 @@ void main(int argc, char **argv){
     /* transpose im3 again */
     transpose(im3);
 
-    // write the result to a file
+    /* Write the result to a file */
     write_to_file(output_file, im3);
 }

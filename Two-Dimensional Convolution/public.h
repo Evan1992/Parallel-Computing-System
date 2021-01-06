@@ -13,5 +13,4 @@
 #define N 512    /* Matrix size */
 typedef struct {float r; float i;} complex;
 
-
 #endif
