@@ -2,7 +2,7 @@ CC1 = gcc
 CC2 = mpicc
 CFLAGS = -lm
 
-all: serial
+all: serial mpi_data_parallelism
 
 # $^ refer to all the dependencies, serial.c fft.o utilities.o
 serial: serial.c fft.o utilities.o

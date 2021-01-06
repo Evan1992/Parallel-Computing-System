@@ -11,16 +11,6 @@ void read_from_file(char* file_name, complex (*im)[N]){
     fclose(f);
 }
 
-void load_data_from_file(char* file_name, complex (*im)[N]){
-    FILE *f; /*open file descriptor */
-    f = fopen(file_name, "r");
-    int i, j;
-    for (i=0;i<512;i++)
-        for (j=0;j<512;j++)
-            fscanf(f,"%g",&im[i][j].r);
-    fclose(f);
-}
-
 void write_to_file(char *file_name, complex (*im)[N]){
     FILE *f;
     f = fopen(file_name, "w");
